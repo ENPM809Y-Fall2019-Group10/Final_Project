@@ -18,7 +18,8 @@ public: //! Public access of class methods.
         double width = 0.0,
         double length = 0.0,
         double height = 0.0,
-        double capacity = 0.0);
+        double capacity = 0.0,
+		char direction = 'n');
 		
     //! Accessors or Getters for position and action
     //! Accessor to get x.
@@ -37,6 +38,8 @@ public: //! Public access of class methods.
     double get_height() const{return height_;} //! Returns value for Robot X height.
 	//! Accessor to get capacity.
     double get_capacity() const{return capacity_;} //! Returns value for Robot X capacity.
+	//! Accessor to get direction.
+    char get_direction() const{return direction_;} //! Returns value for Robot X capacity.
 
     //! Mutators or Setters for position and action.
     //! Mutator to set x.
@@ -47,26 +50,22 @@ public: //! Public access of class methods.
     void set_name(std::string name){name_ = name;} //! Sets name string to robot attribute.
 
     //! Function Prototyping.
-    virtual void GoUp(int, int) = 0;       //! Move the robot up in the maze.
-    virtual void GoDown(int, int) = 0;     //! Move the robot down in the maze.
-    virtual void TurnLeft(int, int) = 0;   //! Move the robot left in the maze.
-    virtual void TurnRight(int, int) = 0;  //! Move the robot right in the maze.
-    virtual void PickUp(std::string) = 0;  //! Arm picks up an object.
-    virtual void Release(std::string) = 0; //! Arm releases an object.
+    virtual void MoveForward() = 0;       	//! Move the robot forward in the maze.
+    virtual void TurnLeft() = 0;   			//! Turn Robot 90 deg counter-clockwise direction.
+    virtual void TurnRight() = 0;  			//! Turn Robot 90 deg clockwise direction.
 
     //! Land Based Robot class destructor.
     virtual ~LandBasedRobot(){}
 
 protected:             //! Protected access for all robot attributes.
     std::string name_; //! Name of the Robot.
-	int x_;            //! X coordinate of the robot in the maze.
-    int y_;            //! Y coordinate of the robot in the maze.
     double speed_;     //! Driving speed of the Robot.
     double width_;     //! Width of the base of the Robot.
     double length_;    //! Lengh of the base of the Robot.
     double height_;    //! Height of the base of the Robot.
     double capacity_;  //! Payload of the arm.
-	char direction_;   //! Direction that the robot is facing in the maze.  The different possibilities are'N'(north),'E'(east),'W'(west),'S'(south).
-
+	int x_;            //! X coordinate of the robot in the maze.
+    int y_;            //! Y coordinate of the robot in the maze.
+	char direction_;   //! Direction that the robot is facing; 'N'(north),'E'(east),'W'(west),'S'(south).
 }; // End of the LandBasedRobot class
 } // End of namespace fp

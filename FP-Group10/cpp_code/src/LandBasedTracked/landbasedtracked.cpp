@@ -1,41 +1,40 @@
 //! \file landbasedtracked.cpp
 
-#include "landbasedtracked.h" //!Includes LandBaseTracked header file.
+#include "../LandBasedTracked/landbasedtracked.h" //!Includes LandBaseTracked header file.
+#include "../API/api.h" //!Includes API header file.
+#include "../Direction/direction.h"
 
 //!Constructor implementation for LandBasedTracked robot using LandBasedRobot as derived object.
-fp::LandBasedTracked::LandBasedTracked(std::string name, int x, int y, std::string track_type) 
-: LandBasedRobot(name, x, y){
+fp::LandBasedTracked::LandBasedTracked(std::string name, int x, int y, std::string track_type): LandBasedRobot(name, x, y), track_type_{track_type}{
 	std::cout << "LandBasedTracked::LandBasedTracked is called\n";
-	track_type_ = new std::string;
-	*track_type_ = track_type;
 }
 
-void fp::LandBasedTracked::GoUp(int x, int y){  //!X and Y positions are pulled to Up function.
-	std::cout<<"LandBasedTracked::GoUp is called"<<std::endl; //!When up is called, cout output is activated identifying GoUp.
-}
-void fp::LandBasedTracked::GoDown(int x,int y)  //!X and Y positions are pulled to Down function.
+void fp::LandBasedTracked::MoveForward() //!Move Robot Forward
 {
-	std::cout<<"LandBasedTracked::GoDown is called"<<std::endl; //!When down is called, cout output is activated identifying GoDown.
-}
-void fp::LandBasedTracked::TurnLeft(int x,int y)  //!X and Y positions are pulled to Left function.
-{
-	std::cout<<"LandBasedTracked::TurnLeft is called"<<std::endl; //!When left is called, cout output is activated identifying TurnLeft.
-}
-void fp::LandBasedTracked::TurnRight(int x,int y)  //!X and Y positions are pulled to Right function.
-{
-	std::cout<<"LandBasedTracked::TurnRight is called"<<std::endl; //!When right is called, cout output is activated identifying TurnRight.
-}
-void fp::LandBasedTracked::PickUp(std::string name) //!Robot type is pulled to Pickup function.
-{
-	std::cout<<"LandBasedTracked::PickUp is called"<<std::endl; //!When Pickup is called, cout output is activated identifying PickUp.
-}
-void fp::LandBasedTracked::Release(std::string name) //!Robot type is pulled to Release function.
-{
-	std::cout<<"LandBasedTracked::Release is called"<<std::endl; //!When Release is called, cout output is activated identifying Release.
+	std::cout<<"LandBasedTracked::MoveForward is called"<<std::endl;  //!When right is called, cout output is activated identifying TurnRight.
+	API::moveForward();
 }
 
-fp::LandBasedTracked::~LandBasedTracked()
+void fp::LandBasedTracked::TurnLeft() //!Turn Robot 90 deg counter-clockwise direction.
 {
-	delete track_type_;
-	std::cout << "LandBasedTracked::~LandBasedTracked is called\n";
+	std::cout<<"LandBasedTracked::TurnLeft is called"<<std::endl;  //!When left is called, cout output is activated identifying TurnLeft.
+	API::turnLeft();
+	switch(direction_){
+		case Direction::NORTH : direction_ = Direction::WEST ; break;
+		case Direction::EAST  : direction_ = Direction::NORTH; break;
+		case Direction::SOUTH : direction_ = Direction::EAST ; break;
+		case Direction::WEST  : direction_ = Direction::SOUTH; break;
+	}
+}
+
+void fp::LandBasedTracked::TurnRight() //!Turn Robot 90 deg clockwise direction.
+{
+	std::cout<<"LandBasedTracked::TurnRight is called"<<std::endl;  //!When right is called, cout output is activated identifying TurnRight.
+	API::turnRight();
+	switch(direction_){
+		case Direction::NORTH : direction_ = Direction::EAST ; break;
+		case Direction::EAST  : direction_ = Direction::SOUTH; break;
+		case Direction::SOUTH : direction_ = Direction::WEST ; break;
+		case Direction::WEST  : direction_ = Direction::NORTH; break;
+	}
 }

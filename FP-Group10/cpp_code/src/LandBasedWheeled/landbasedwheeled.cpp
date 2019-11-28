@@ -1,46 +1,44 @@
 //! \file landbasedwheeled.cpp
 
-#include "landbasedwheeled.h" //!Includes LandBasedWheeled header file.
+#include "../LandBasedWheeled/landbasedwheeled.h" //!Includes LandBasedWheeled header file.
+#include "../API/api.h"
+#include "../Direction/direction.h"
 
 //! Constructor Implementation for LandBasedWheeled
-fp::LandBasedWheeled::LandBasedWheeled(std::string name, int x, int y, int wheel_number, std::string wheel_type)
-: LandBasedRobot(name, x, y), wheel_number_{wheel_number}{
+fp::LandBasedWheeled::LandBasedWheeled(std::string name, int x, int y, int wheel_number): LandBasedRobot(name, x, y), wheel_number_{wheel_number}{
 	std::cout << "LandBasedWheeled::LandBasedWheeled is called\n";
-	wheel_type_ = new std::string;
-	*wheel_type_ = wheel_type;
 }
 
-void fp::LandBasedWheeled::GoUp(int x, int y){ //!X and Y positions are pulled to Up function.
-	std::cout<<"LandBasedWheeled::GoUp is called"<<std::endl; //!When up is called, cout output is activated identifying GoUp.
-}
-void fp::LandBasedWheeled::GoDown(int x,int y) //!X and Y positions are pulled to Down function.
+void fp::LandBasedWheeled::MoveForward() //!Turn Robot 90 deg clockwise direction.
 {
-	std::cout<<"LandBasedWheeled::GoDown is called"<<std::endl;  //!When down is called, cout output is activated identifying GoDown.
+	std::cout<<"LandBasedWheeled::MoveForward is called"<<std::endl;  //!When right is called, cout output is activated identifying TurnRight.
+	API::moveForward();
 }
-void fp::LandBasedWheeled::TurnLeft(int x,int y) //!X and Y positions are pulled to Left function.
+
+void fp::LandBasedWheeled::TurnLeft() //!Turn Robot 90 deg counter-clockwise direction.
 {
 	std::cout<<"LandBasedWheeled::TurnLeft is called"<<std::endl;  //!When left is called, cout output is activated identifying TurnLeft.
+	API::turnLeft();
+	switch(direction_){
+		case Direction::NORTH : direction_ = Direction::WEST ; break;
+		case Direction::EAST  : direction_ = Direction::NORTH; break;
+		case Direction::SOUTH : direction_ = Direction::EAST ; break;
+		case Direction::WEST  : direction_ = Direction::SOUTH; break;
+	}
 }
-void fp::LandBasedWheeled::TurnRight(int x,int y) //!X and Y positions are pulled to Right function.
+void fp::LandBasedWheeled::TurnRight() //!Turn Robot 90 deg clockwise direction.
 {
 	std::cout<<"LandBasedWheeled::TurnRight is called"<<std::endl;  //!When right is called, cout output is activated identifying TurnRight.
-}
-void fp::LandBasedWheeled::PickUp(std::string name) //!Robot name is pulled to PickUp function.
-{
-	std::cout<<"LandBasedWheeled::PickUp is called"<<std::endl; //!When pickup is called, cout output is activated identifying PickUp.
-}
-void fp::LandBasedWheeled::Release(std::string name) //!X and Y positions are pulled to Right function.
-{
-	std::cout<<"LandBasedWheeled::Release is called"<<std::endl; //!When Release is called, cout output is activated identifying Release.
+	API::turnRight();
+	switch(direction_){
+		case Direction::NORTH : direction_ = Direction::EAST ; break;
+		case Direction::EAST  : direction_ = Direction::SOUTH; break;
+		case Direction::SOUTH : direction_ = Direction::WEST ; break;
+		case Direction::WEST  : direction_ = Direction::NORTH; break;
+	}
 }
 
-//! FUCNTION ONLY IN LANDBASEDWHEELED.
-void fp::LandBasedWheeled::SpeedUp(int){ //! Speed increase int value is pulled to SpeedUp function.
+//! FUNCTION ONLY IN LANDBASEDWHEELED.
+void fp::LandBasedWheeled::SpeedUp(int delta){ //! Implements the speed increases in robot.
 	std::cout<<"LandBasedWheeled::SpeedUp is called"<<std::endl; //!When SpeedUp is called, cout output is activated to identify SpeedUp.
-}
-
-fp::LandBasedWheeled::~LandBasedWheeled()
-{
-	delete wheel_type_;
-	std::cout << "LandBasedWheeled::~LandBasedWheeled is called\n";
 }

@@ -8,6 +8,21 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="Direction">
+      <File Name="src/Direction/direction.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Algorithm">
+      <File Name="src/Algorithm/bfsalgorithm.cpp"/>
+      <File Name="src/Algorithm/bfsalgorithm.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="Maze">
+      <File Name="src/Maze/maze.cpp"/>
+      <File Name="src/Maze/maze.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="API">
+      <File Name="src/API/api.cpp"/>
+      <File Name="src/API/api.h"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="LandBasedTracked">
       <File Name="src/LandBasedTracked/landbasedtracked.cpp"/>
       <File Name="src/LandBasedTracked/landbasedtracked.h"/>
@@ -38,6 +53,10 @@
         <IncludePath Value="src/LandBasedRobot"/>
         <IncludePath Value="src/LandBasedTracked"/>
         <IncludePath Value="src/LandBasedWheeled"/>
+        <IncludePath Value="src/API"/>
+        <IncludePath Value="src/Maze"/>
+        <IncludePath Value="src/Direction"/>
+        <IncludePath Value="src/Algorithm"/>
       </Compiler>
       <Linker Options="" Required="yes"/>
       <ResourceCompiler Options="" Required="no"/>

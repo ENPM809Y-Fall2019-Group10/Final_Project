@@ -10,3 +10,7 @@
 -I/home/rachith/git/ENPM809Y/Final_Project/FP-Group10/cpp_code/src/LandBasedRobot
 -I/home/rachith/git/ENPM809Y/Final_Project/FP-Group10/cpp_code/src/LandBasedTracked
 -I/home/rachith/git/ENPM809Y/Final_Project/FP-Group10/cpp_code/src/LandBasedWheeled
+-I/home/rachith/git/ENPM809Y/Final_Project/FP-Group10/cpp_code/src/API
+-I/home/rachith/git/ENPM809Y/Final_Project/FP-Group10/cpp_code/src/Maze
+-I/home/rachith/git/ENPM809Y/Final_Project/FP-Group10/cpp_code/src/Direction
+-I/home/rachith/git/ENPM809Y/Final_Project/FP-Group10/cpp_code/src/Algorithm
