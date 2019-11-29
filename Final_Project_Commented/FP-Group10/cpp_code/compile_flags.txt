@@ -1,0 +1,16 @@
+-I/usr/include/c++/7
+-I/usr/include/x86_64-linux-gnu/c++/7
+-I/usr/include/c++/7/backward
+-I/usr/lib/gcc/x86_64-linux-gnu/7/include
+-I/usr/local/include
+-I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed
+-I/usr/include/x86_64-linux-gnu
+-I/usr/include
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code"
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code/src/LandBasedRobot"
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code/src/LandBasedTracked"
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code/src/LandBasedWheeled"
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code/src/API"
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code/src/Maze"
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code/src/Direction"
+-I"/home/acf/Documents/ENPM809Y Files/Final_Project/Final_Project_Rachith/FP-Group10/cpp_code/src/Algorithm"
