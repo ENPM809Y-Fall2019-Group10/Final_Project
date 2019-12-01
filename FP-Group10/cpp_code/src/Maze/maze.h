@@ -17,6 +17,7 @@ namespace fp
  * readWall(): Reads presence of wall in maze file from given position and current robot heading \n
  * setWall(): Sets wall in maze simulator based on discoveries from search algorithm and readWall \n
  * colorCenter(): Colors center of maze to distinguish goal in the simulator environment \n
+ * textCenter(): Texts center of maze to mark goal in the simulator environment \n
  * setVisited(): Set a certain cell. Done by algorithm implementation \n
  * isVisited(): Checks if a certain cell is visited in the algorithm implementation \n
  * isGoal(): Checks if the input is one of the possible goal nodes or not \n
