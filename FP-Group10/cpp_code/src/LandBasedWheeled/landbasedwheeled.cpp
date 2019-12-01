@@ -20,10 +20,10 @@ void fp::LandBasedWheeled::TurnLeft() //!Turn Robot 90 deg counter-clockwise dir
 	std::cout<<"LandBasedWheeled::TurnLeft is called"<<std::endl;  //!When left is called, cout output is activated identifying TurnLeft.
 	API::turnLeft();
 	switch(direction_){
-		case Direction::NORTH : direction_ = Direction::WEST ; break;
-		case Direction::EAST  : direction_ = Direction::NORTH; break;
-		case Direction::SOUTH : direction_ = Direction::EAST ; break;
-		case Direction::WEST  : direction_ = Direction::SOUTH; break;
+		case fp::Direction::NORTH : direction_ = fp::Direction::WEST ; break;
+		case fp::Direction::EAST  : direction_ = fp::Direction::NORTH; break;
+		case fp::Direction::SOUTH : direction_ = fp::Direction::EAST ; break;
+		case fp::Direction::WEST  : direction_ = fp::Direction::SOUTH; break;
 	}
 }
 void fp::LandBasedWheeled::TurnRight() //!Turn Robot 90 deg clockwise direction.
@@ -31,10 +31,10 @@ void fp::LandBasedWheeled::TurnRight() //!Turn Robot 90 deg clockwise direction.
 	std::cout<<"LandBasedWheeled::TurnRight is called"<<std::endl;  //!When right is called, cout output is activated identifying TurnRight.
 	API::turnRight();
 	switch(direction_){
-		case Direction::NORTH : direction_ = Direction::EAST ; break;
-		case Direction::EAST  : direction_ = Direction::SOUTH; break;
-		case Direction::SOUTH : direction_ = Direction::WEST ; break;
-		case Direction::WEST  : direction_ = Direction::NORTH; break;
+		case fp::Direction::NORTH : direction_ = fp::Direction::EAST ; break;
+		case fp::Direction::EAST  : direction_ = fp::Direction::SOUTH; break;
+		case fp::Direction::SOUTH : direction_ = fp::Direction::WEST ; break;
+		case fp::Direction::WEST  : direction_ = fp::Direction::NORTH; break;
 	}
 }
 

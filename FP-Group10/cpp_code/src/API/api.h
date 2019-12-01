@@ -3,6 +3,31 @@
 
 namespace fp
 {
+/*! \class API api.h "src/API/api.h"
+ * \brief API class for interaction with mms simulator.
+ * \details API class interacts with the mms simulator through std::cout and std::cin to send and receive
+ * command/information. \n
+ * Member functions of this class are as follows: \n
+ * mazeWidth(): 
+ * mazeHeight(): 
+ * wallFront(): 
+ * wallRight(): 
+ * wallLeft(): 
+ * moveForward(): 
+ * turnRight(): 
+ * turnLeft(): 
+ * setWall(): 
+ * clearWall(): 
+ * setColor(): 
+ * clearColor():
+ * clearAllColor():
+ * setText():
+ * clearText():
+ * clearAllText():
+ * wasReset():
+ * ackReset():
+ *  \headerfile maze.h
+ */
 class API
 {
 	public:

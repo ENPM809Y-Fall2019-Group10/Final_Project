@@ -1,5 +1,9 @@
 //! Group 10 - FP
 //! \file main.cpp
+/*! \mainpage ENPM809Y Group 10
+ * Final Project
+ * Micromouse Simulation
+*/
 
 #include <stdio.h>
 #include "./src/LandBasedRobot/landbasedrobot.h"
@@ -9,26 +13,38 @@
 #include "./src/Maze/maze.h"
 #include "./src/Algorithm/bfsalgorithm.h"
 
+/**
+	* @brief	Main function
+	* @details	Calls on LandBasedRobot inherited classes to generate new robot, create instance of provided maze, \n
+	*			and implements Dynamic Programming algorithms such as BFS, DFS to navigate from start location (0,0) to goal location.
+	* @param argc	Length of number of arguments passed to main function when it was called. Command line arguments.
+	* @param argv	Each argument can be accessed through this parameter.
+	* @return return 0
+*/
+
 int main(int argc, char **argv)
 {
 	printf("Alright, let's start it!!\n");
 	
-	fp::LandBasedRobot* wheel_robot = new fp::LandBasedWheeled("Husky", 0, 0);
+	// LandBasedWheeled Robot initialization
+//	fp::LandBasedRobot* wheel_robot = new fp::LandBasedWheeled("Husky", 0, 0);
+	
+	// LandBasedTracked Robot initialization
+	fp::LandBasedRobot* track_robot = new fp::LandBasedTracked("Houston", 0, 0);
 	
 	// Create an instance of maze
 	fp::Maze* maze_ptr = new fp::Maze();
-	maze_ptr->printMaze();
+//	maze_ptr->printMaze();
 	
 	// Create an instance of Algorithm class
 	fp::Algorithm* bfs_algo = new fp::Algorithm(maze_ptr);
-	wheel_robot->TurnLeft();
-	wheel_robot->TurnLeft();
-	wheel_robot->TurnLeft();
-	bfs_algo->solve(maze_ptr, wheel_robot);	
+
+	// Call solve from Algorithm to start solving
+	bfs_algo->solve(maze_ptr, track_robot);	
 	
 	
 	delete bfs_algo;
 	delete maze_ptr;
-	delete wheel_robot;
+	delete track_robot;
 	return 0;
 }

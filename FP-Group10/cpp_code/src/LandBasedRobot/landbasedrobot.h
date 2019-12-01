@@ -48,6 +48,8 @@ public: //! Public access of class methods.
     void set_y(int y){y_ = y;} //! Sets y to robot attribute for y-maze position.
     //! Mutator to set name string.
     void set_name(std::string name){name_ = name;} //! Sets name string to robot attribute.
+	//! Mutator to set direction
+	void set_direction(char dir){direction_ = dir;} //! Sets direction of robot.
 
     //! Function Prototyping.
     virtual void MoveForward() = 0;       	//! Move the robot forward in the maze.
