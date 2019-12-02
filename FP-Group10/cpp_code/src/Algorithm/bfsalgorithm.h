@@ -1,32 +1,67 @@
+//! \file bfsalgorithm.h
+
 #pragma once
 
 #include "../Maze/maze.h"
 #include "../LandBasedRobot/landbasedrobot.h"
 #include "../Direction/direction.h"
 #include <queue>
+#include <memory>
 
 namespace fp
 {
+    
+/**
+    * @class    Algorithm bfsalgorithm.h "src/Algorithm/bfsalgorithm.h"
+    * @brief    Algorithm class performs Breadth First Search (BFS) operations on maze discovered in simulator.
+    * @details  Algorithm class is designed to analyze the maze file discovered from the simulator and find a path
+    *           from the start location to goal location. The BFS algorithm will evaluate the precense of a wall to
+    *           the neighboring cells to determine a clear path. The accessible cell locations around the current position
+    *           are added to a queue of points to be evaluated. This process continues for each search "branch" produced by
+    *           the search algorithm until an evaluated point reaches the goal area. \n
+    *           As the search algorithm produces a path to the goal area, the robot is commanded to move through the visited
+    *           point list towards the goal. Robot movement commands are acheived through the API commands in a separate function. \n
+    *           solve(): Checks if an evaluated point has reached the goal location and traces final path produced from BFS algorithm. \n 
+    *           generatePath(): Runs BFS algorithm to search and evaluate points while producing a suitable path to the goal. \n
+    *           followPath(): Performs checks to verify robot can move to next point among accessbile points. \n
+    *           moveRobot(): Performs commands to API functions for robot to move through maze. \n
+    *           printPath(): Displays path discovered from BFS algorithm. \n
+    *           colorPath(): Sets different color to finalized path in simulation display. \n
+    *           \headerfile bfsalgorithm.h
+*/
+    
 class Algorithm
 {
 	public:
 
-		//! Constructor
-		Algorithm(fp::Maze*);
+		/** @brief Constructor for Algorithm class */
+		Algorithm(std::shared_ptr<fp::Maze>);
 		
-		//! Member functions
-		void solve(fp::Maze*, fp::LandBasedRobot*);
-		bool generatePath(fp::Maze*, fp::LandBasedRobot*);
-		bool followPath(fp::Maze*, fp::LandBasedRobot*);
-		bool moveRobot(int, int, fp::Maze*, fp::LandBasedRobot*);
+		/** @brief Member functions for Algorithm class */
+		void solve(std::shared_ptr<fp::Maze>, std::shared_ptr<fp::LandBasedRobot>);
+		bool generatePath(std::shared_ptr<fp::Maze>, std::shared_ptr<fp::LandBasedRobot>);
+		bool followPath(std::shared_ptr<fp::Maze>, std::shared_ptr<fp::LandBasedRobot>);
+		bool moveRobot(int, int, std::shared_ptr<fp::Maze>, std::shared_ptr<fp::LandBasedRobot>);
 		void printPath();
 		void colorPath();
 		
-		//!Destructor
-		~Algorithm();
+		/** @brief Destructor for Algorithm class
+		* @details deletes any pointers if created as attributes.
+		*/
+		~Algorithm(){}
 		
 	private:
-		std::vector<std::pair<int, int> > path_; // To track the path from current location to goal node.
+/**
+    * @brief    BFS algorithm utilizes various queue parameters to stage and evaluate individual cells
+    * @param path_  Vector to build final path to goal node.
+    * @param xq_    Queue value to store x coordinate of the cell being evaluated
+    * @param y1_    Queue value to store y coordinate of the cell being evaluated
+    * @param xarr_  X list of possible grid movements. Order implemented is down, right, up, left (S, E, N, W)
+    * @param yarr_  Y list of possible grid movements. Order implemented is down, right, up, left (S, E, N, W)
+    * @param dir_   List of compass directions corresponding to grid movements in xarr_ and yarr_
+    * 
+*/
+		std::vector<std::pair<int, int> > path_; // To track the path to goal node.
 		std::queue<int> xq_; // Queue to store x coordinates as we traverse path
 		std::queue<int> yq_; // Queue to store y coordinates as we traverse path
 		int xarr_[4]{0, 1, 0, -1}; // x list of possible movements on the grid. Order is in down, right, up and left i.e S, E, N, W
