@@ -29,6 +29,7 @@ void fp::Algorithm::solve(fp::Maze* maze_ptr, fp::LandBasedRobot* wheel_robot)
 		}
 		else{
 			std::cerr << "Path does not exist to goal node. Bye, bye!" << std::endl;
+			break;
 		}
 	}		
 }
