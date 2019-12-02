@@ -10,7 +10,9 @@
 #include "src/LandBasedWheeled/landbasedwheeled.h"
 #include "src/API/api.h"
 #include "src/Maze/maze.h"
-#include "src/Algorithm/bfsalgorithm.h"
+#include "src/Algorithm/algorithm.h"
+#include "src/BFSAlgorithm/bfsalgorithm.h"
+#include "src/DFSAlgorithm/dfsalgorithm.h"
 #include <memory>
 
 /**
@@ -49,7 +51,7 @@ int main(int argc, char **argv)
     * @param bfs_algo   Instance of Algorithm class for BFS operations and path finding.
 */
 
-	std::unique_ptr<fp::Algorithm> bfs_algo = std::make_unique<fp::Algorithm>(maze_ptr);
+	std::unique_ptr<fp::Algorithm> bfs_algo = std::make_unique<fp::BFSAlgorithm>(maze_ptr);
 
 /**
     * @brief    Call solve from Algorithm

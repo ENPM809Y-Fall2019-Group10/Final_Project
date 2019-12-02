@@ -8,12 +8,20 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="DFSAlgorithm">
+      <File Name="src/DFSAlgorithm/dfsalgorithm.cpp"/>
+      <File Name="src/DFSAlgorithm/dfsalgorithm.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="BFSAlgorithm">
+      <File Name="src/BFSAlgorithm/bfsalgorithm.cpp"/>
+      <File Name="src/BFSAlgorithm/bfsalgorithm.h"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="Direction">
       <File Name="src/Direction/direction.h"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Algorithm">
-      <File Name="src/Algorithm/bfsalgorithm.cpp"/>
-      <File Name="src/Algorithm/bfsalgorithm.h"/>
+      <File Name="src/Algorithm/algorithm.h"/>
+      <File Name="src/Algorithm/algorithm.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Maze">
       <File Name="src/Maze/maze.cpp"/>
