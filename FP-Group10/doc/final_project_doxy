@@ -829,7 +829,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  =		../cpp_code/main.cpp ../cpp_code/src/LandBasedRobot/ ../cpp_code/src/LandBasedTracked/ ../cpp_code/src/LandBasedWheeled/ ../cpp_code/src/Direction/ ../cpp_code/src/API/ ../cpp_code/src/Algorithm/ ../cpp_code/src/Maze/
+INPUT                  =		../cpp_code/main.cpp ../cpp_code/src/LandBasedRobot/ ../cpp_code/src/LandBasedTracked/ ../cpp_code/src/LandBasedWheeled/ ../cpp_code/src/Direction/ ../cpp_code/src/API/ ../cpp_code/src/Algorithm/ ../cpp_code/src/Maze/ ../cpp_code/src/BFSAlgorithm/ ../cpp_code/src/DFSAlgorithm/
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

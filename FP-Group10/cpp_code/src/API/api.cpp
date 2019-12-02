@@ -4,10 +4,9 @@
 #include <cstdlib>
 #include <iostream>
 
-/** @detail mazeWidth function requests maze width from API and returns
- * maze width information.
- * @param response becomes a constant string to verify response was received from API
- * @return API mazeWidth returns integer with maze width for analysis
+/** @details mazeWidth function requests maze width from API and returns
+ * maze width information. Response becomes a constant string to verify response was received from API
+ * @return int mazeWidth returns integer with maze width for analysis
  */
 int fp::API::mazeWidth() {
     std::cout << "mazeWidth" << std::endl;
@@ -16,10 +15,9 @@ int fp::API::mazeWidth() {
     return atoi(response.c_str());
 }
 
-/** @detail mazeHeight function requests maze height from API and returns 
- * maze height information.
- * @param response becomes constant string to verify response was received from API
- * @return API mazeHeight returns integer with maze height for analysis
+/** @details mazeHeight function requests maze height from API and returns 
+ * maze height information. Response becomes constant string to verify response was received from API
+ * @return int mazeHeight returns integer with maze height for analysis
  */
 int fp::API::mazeHeight() {
     std::cout << "mazeHeight" << std::endl;
@@ -28,8 +26,7 @@ int fp::API::mazeHeight() {
     return atoi(response.c_str());
 }
 
-/** @detail wallFront function checks for wall infront of robot based on current heading
- * @param response becomes a constant string to verify response was received from API
+/** @details wallFront function checks for wall infront of robot based on current heading response becomes a constant string to verify response was received from API
  * @return API wallFront returns boolean to identify if forward path is clear or blocked.
  * True is returned if wall is present.
  */
@@ -40,8 +37,7 @@ bool fp::API::wallFront() {
     return response == "true";
 }
 
-/** @detail wallRight function checks for wall to right of robot based on current heading
- * @param response becomes a constant string to verify response was received from API.
+/** @details wallRight function checks for wall to right of robot based on current heading response becomes a constant string to verify response was received from API.
  * @return API wallRight returns boolean to identify if right path is clear or blocked.
  * True is returned if wall is present.
  */
@@ -52,8 +48,7 @@ bool fp::API::wallRight() {
     return response == "true";
 }
 
-/** @detail wallLeft function checks for wall to left of robot based on current heading
- * @param response becomes a constant string to verify response was received from API.
+/** @details wallLeft function checks for wall to left of robot based on current heading response becomes a constant string to verify response was received from API.
  * @return API wallLeft returns boolean to identify if left path is clear or blocked.
  * True is returned if wall is present.
  */
@@ -64,8 +59,7 @@ bool fp::API::wallLeft() {
     return response == "true";
 }
 
-/** @detail moveForward function moves robot position forward if path is clear.
- * @param response is constant string to verify response was received from API after
+/** @details moveForward function moves robot position forward if path is clear response is constant string to verify response was received from API after
  * action is completed.
  */
 void fp::API::moveForward() {
@@ -78,8 +72,7 @@ void fp::API::moveForward() {
     }
 }
 
-/** @detail turnRight function rotates robot clockwise if rotation is needed
- * @param response is constant string to verify response was received from API after
+/** @details turnRight function rotates robot clockwise if rotation is needed response is constant string to verify response was received from API after
  * action is completed.
  */
 void fp::API::turnRight() {
@@ -88,8 +81,7 @@ void fp::API::turnRight() {
     std::cin >> ack;
 }
 
-/** @detail turnLeft function rotates robot counter-clockwise if rotation is needed
- * @param response is constant string to verify response was received from API after
+/** @details turnLeft function rotates robot counter-clockwise if rotation is needed response is constant string to verify response was received from API after
  * action is completed.
  */
 void fp::API::turnLeft() {
@@ -98,71 +90,72 @@ void fp::API::turnLeft() {
     std::cin >> ack;
 }
 
-/** @detail setWall function sets wall in system memory at the location and direction around
+/** @details setWall function sets wall in system memory at the location and direction around
  * current position
  * @param x: Current X position
  * @param y: Current Y position
- * @direction: Desired heading
+ * @param direction: Desired heading
  */
 void fp::API::setWall(int x, int y, char direction) {
     std::cout << "setWall " << x << " " << y << " " << direction << std::endl;
 }
 
-/** @detail clearWall function clears wall at specified position.
+/** @details clearWall function clears wall at specified position.
  * @param x: Current X position
  * @param y: Current Y position
- * @direction: Desired heading
+ * @param direction: Desired heading
  */
 void fp::API::clearWall(int x, int y, char direction) {
     std::cout << "clearWall " << x << " " << y << " " << direction << std::endl;
 }
 
-/** @detail setColor function defines wall color for specified wall position. This can be used to
+/** @details setColor function defines wall color for specified wall position. This can be used to
  * identify discovered walls during movement.
  * @param x: Current X position
  * @param y: Current Y position
- * @direction: Desired heading
+ * @param color: Desired heading
  */
 void fp::API::setColor(int x, int y, char color) {
     std::cout << "setColor " << x << " " << y << " " << color << std::endl;
 }
 
-/** @detail clearColor function removes defined wall color at specific location.
+/** @details clearColor function removes defined wall color at specific location.
  * @param x: Current X position
  * @param y: Current Y position
- * @direction: Desired heading
  */
 void fp::API::clearColor(int x, int y) {
     std::cout << "clearColor " << x << " " << y << std::endl;
 }
 
-/** @detail clearAllColor function removes defined wall color at all locations.
+/** @details clearAllColor function removes defined wall color at all locations.
  */
 void fp::API::clearAllColor() {
     std::cout << "clearAllColor" << std::endl;
 }
 
-/** @detail setText function uses API feature to write text at specific x,y cell position.
+/** @details setText function uses API feature to write text at specific x,y cell position.
  * Can be used to number specific cells or assign weight values if weighted search methods are used.
+ * @param x: x-location
+ * @param y: y-location
  * @param text: String text to be written in cell position X,Y
  */
 void fp::API::setText(int x, int y, const std::string& text) {
     std::cout << "setText " << x << " " << y << " " << text << std::endl;
 }
 
-/** @detail clearText function uses API feature to clear text at specific x,y cell position.
+/** @details clearText function uses API feature to clear text at specific x,y cell position.
  */
 void fp::API::clearText(int x, int y) {
     std::cout << "clearText " << x << " " << y << std::endl;
 }
 
-/** @detail clearAllText function uses API feature to clear text at all cell position.
+/** @details clearAllText function uses API feature to clear text at all cell position.
  */
 void fp::API::clearAllText() {
     std::cout << "clearAllText" << std::endl;
 }
 
-/** @detail wasReset function uses API feature to reset maze simulator. Can be used
+/** @details wasReset function uses API feature to reset maze simulator. Can be used
  * in case of crash to reset path search and restart from beginning.
  * Function will provide response when process is completed.
  * @return boolean true if system reset was completed
@@ -174,7 +167,7 @@ bool fp::API::wasReset() {
     return response == "true";
 }
 
-/** @detail ackReset function resets ack response from API. Used for verification when API
+/** @details ackReset function resets ack response from API. Used for verification when API
  * functions are completed.
  */
 void fp::API::ackReset() {

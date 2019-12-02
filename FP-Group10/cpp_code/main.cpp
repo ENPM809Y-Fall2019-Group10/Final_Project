@@ -21,9 +21,8 @@
 	*			and implements Dynamic Programming algorithms such as BFS, DFS to navigate from start location (0,0) to goal location.
 	* @param argc	Length of number of arguments passed to main function when it was called. Command line arguments.
 	* @param argv	Each argument can be accessed through this parameter.
-	* @return return 0
+	* @return int 0
 */
-
 int main(int argc, char **argv)
 {
 	std::cerr << "Alright, let's start it!!" << std::endl;
@@ -40,7 +39,6 @@ int main(int argc, char **argv)
     * @details  Creates an instance of the maze file discovered in the simulator. This instance can be used to verify
     *           explored points are within the maze perimeter and the goal is reached. This maze instance will be passed
     *           to the solving and tracing functions.
-    * @param maze_ptr   Pointer to the maze cells found in the discovered maze file.
 */
 	std::shared_ptr<fp::Maze> maze_ptr = std::make_shared<fp::Maze>();
 	
@@ -48,13 +46,12 @@ int main(int argc, char **argv)
     * @brief    Create Algorithm class instance
     * @details  Creates an instance of Algorithm class to of the Breadth First Search solving algorithm. The parameter
     *           maze_ptr is passed to the new Algorithm class to perform valid point checks and evaluation of wall presense.
-    * @param bfs_algo   Instance of Algorithm class for BFS operations and path finding.
 */
 
 	std::unique_ptr<fp::Algorithm> bfs_algo = std::make_unique<fp::BFSAlgorithm>(maze_ptr);
 
 /**
-    * @brief    Call solve from Algorithm
+    * @brief    Call solve() from Algorithm
     * @details  Previously generated Algorithm class instance called bfs_algo calls solve function in bfsalgorithm.cpp
     *           to perform maze solving operations and track tracing once search is completed.
     * @param maze_ptr   Maze pointers passed to solve function to perform cell analysis and wall discovery operations.

@@ -17,7 +17,7 @@ void fp::LandBasedWheeled::MoveForward()
 }
 
 /** @brief When TurnLeft is called, simulator API function is called to turn robot counter-clockwise */
-/** @detail TurnLeft function will rotate robot counter-clockwise 90 degrees each time the function is called.
+/** @details TurnLeft function will rotate robot counter-clockwise 90 degrees each time the function is called.
  * When the rotation occurs, the heading is updated for future operations to reflect the direction of the robot
  */
 void fp::LandBasedWheeled::TurnLeft()
@@ -33,7 +33,7 @@ void fp::LandBasedWheeled::TurnLeft()
 }
 
 /** @brief When TurnRight is called, simulator API function is called to turn robot clockwise */
-/** @detail TurnRight function will rotate robot clockwise 90 degrees each time the function is called.
+/** @details TurnRight function will rotate robot clockwise 90 degrees each time the function is called.
  * When the rotation occurs, the heading is updated for future operations to reflect the direction of the robot.
  */
 void fp::LandBasedWheeled::TurnRight()

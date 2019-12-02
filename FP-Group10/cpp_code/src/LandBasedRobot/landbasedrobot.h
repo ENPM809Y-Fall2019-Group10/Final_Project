@@ -13,8 +13,6 @@ class LandBasedRobot{
 /** @brief Public access of class methods */
 public:
 
-    /** @brief Land Based Robot class constructor */
-    /** @detail Defines initial pararmeters for LandBasedRobot attributes */
     LandBasedRobot(std::string name = "none",
         int x = 0,
         int y = 0,
@@ -54,19 +52,19 @@ public:
     char get_direction() const{return direction_;}
 
     /** @brief Mutators or Setters for position and action */
-    /** @detail Mutator to set x. Sets x value to robot attribute for x-maze position */
+    /** @details Mutator to set x. Sets x value to robot attribute for x-maze position */
     void set_x(int x){x_ = x;}
     
-    /** @detail Mutator to set y. Sets Y value to robot attribute for y-maze position */
+    /** @details Mutator to set y. Sets Y value to robot attribute for y-maze position */
     void set_y(int y){y_ = y;}
     
-    /** @detail Mutator to set name string. Sets name string to robot attribute */
+    /** @details Mutator to set name string. Sets name string to robot attribute */
     void set_name(std::string name){name_ = name;}
 
     /** @brief Function Prototyping for movement */
-    /** @function MoveForward. Move robot forward in maze
-     * @function TurnLeft. Turn robot 90 deg counter-clockwise
-     * @function TurnRight. Turn robot 90 deg clockwise
+    /** MoveForward. Move robot forward in maze
+     *  TurnLeft. Turn robot 90 deg counter-clockwise
+     *  TurnRight. Turn robot 90 deg clockwise
      */
     virtual void MoveForward() = 0;
     virtual void TurnLeft() = 0;
@@ -75,16 +73,6 @@ public:
     /** @brief Land Based Robot class destructor */
     virtual ~LandBasedRobot(){}
 
-/** @brief Protected access for all robot attributes */
-/** @param name_: String name of robot
- * @param speed_: Current speed of robot
- * @param width_: Width of robot chassis
- * @param height_: Height of robot chassis
- * @param capacity_: Payload capacity of robot
- * @param x_: Current X position of robot
- * @param y_: Current Y position of robot
- * @param direction_: Current heading of robot. Will be either N, S, E, or W
- */
 protected:             
     std::string name_;
     double speed_;

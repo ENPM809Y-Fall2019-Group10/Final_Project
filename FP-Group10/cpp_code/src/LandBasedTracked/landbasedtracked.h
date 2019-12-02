@@ -23,13 +23,13 @@ class LandBasedTracked : public LandBasedRobot
 		}
 		
 		/** @brief Setter for track type pointer */
-        /** @detail Function set_track_type sets class attribute to functional track type parameter. */
+        /** @details Function set_track_type sets class attribute to functional track type parameter. */
 		void set_track_type(std::string track_type){
 			track_type_ = track_type;
 		}
         
 		/** @brief Function Prototyping */
-        /** @detail function prototypes for MoveForward, TurnLeft, TurnRight */
+        /** @details function prototypes for MoveForward, TurnLeft, TurnRight */
 		virtual void MoveForward() override;       		//! Move the robot forward in the maze.
 		virtual void TurnLeft() override;   			//! Turn Robot 90 deg counter-clockwise direction.
 		virtual void TurnRight() override;  			//! Turn Robot 90 deg clockwise direction.

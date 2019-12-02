@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['direction',['Direction',['../structfp_1_1Direction.html',1,'fp']]]
+  ['bfsalgorithm_119',['BFSAlgorithm',['../classfp_1_1BFSAlgorithm.html',1,'fp']]]
 ];

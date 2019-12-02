@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['_7ealgorithm',['~Algorithm',['../classfp_1_1Algorithm.html#af705307cbb73ebae5524fde539bcc83d',1,'fp::Algorithm']]],
-  ['_7eapi',['~API',['../classfp_1_1API.html#a3f403b10f97719e365a133dd069eddcb',1,'fp::API']]],
-  ['_7elandbasedrobot',['~LandBasedRobot',['../classfp_1_1LandBasedRobot.html#acfe49650459e4e6c72b87e6eff1072d9',1,'fp::LandBasedRobot']]],
-  ['_7elandbasedtracked',['~LandBasedTracked',['../classfp_1_1LandBasedTracked.html#a60b4e1da43f053a5a0351d52d79785e0',1,'fp::LandBasedTracked']]],
-  ['_7elandbasedwheeled',['~LandBasedWheeled',['../classfp_1_1LandBasedWheeled.html#a932593879ef390bf1b019ddb3cfa604d',1,'fp::LandBasedWheeled']]],
-  ['_7emaze',['~Maze',['../classfp_1_1Maze.html#ae5f5b10dd66d6a994a40da62fef39577',1,'fp::Maze']]]
+  ['textcenter_198',['textCenter',['../classfp_1_1Maze.html#af4401316460237cbda84b1bc3b55cd13',1,'fp::Maze']]],
+  ['turnleft_199',['TurnLeft',['../classfp_1_1LandBasedRobot.html#ae02326643473f9af46f839743b880341',1,'fp::LandBasedRobot::TurnLeft()'],['../classfp_1_1LandBasedTracked.html#a63141c32f8f81c301be4126297103a41',1,'fp::LandBasedTracked::TurnLeft()'],['../classfp_1_1LandBasedWheeled.html#a240c5e9cf72006ac2f99f8e1dfc4dc5d',1,'fp::LandBasedWheeled::TurnLeft()'],['../classfp_1_1API.html#aacf09d263f8c47e7f3eae1f348db0b91',1,'fp::API::turnLeft()']]],
+  ['turnright_200',['TurnRight',['../classfp_1_1LandBasedRobot.html#a7c9e5fccc618e2e0d301605e60510ff0',1,'fp::LandBasedRobot::TurnRight()'],['../classfp_1_1LandBasedTracked.html#a813613a1eaa7a0782ea254a167d97da3',1,'fp::LandBasedTracked::TurnRight()'],['../classfp_1_1LandBasedWheeled.html#a505f5c33f04681aa5c7362531947f4ca',1,'fp::LandBasedWheeled::TurnRight()'],['../classfp_1_1API.html#ac346f1c3ae7a39829c16681be2f25e92',1,'fp::API::turnRight()']]]
 ];

@@ -28,13 +28,13 @@ class LandBasedWheeled : public LandBasedRobot /** Creating LandBasedWheeled cla
 		}
         
 		/** @brief Function Prototyping */
-		/** @detail The robot can increase it's speed, which is translated by the number of 
+		/** @details The robot can increase it's speed, which is translated by the number of 
          * cells in the maze that the robot can traverse in each step.
          * 
-         * @function SpeedUp(int): Increase speed==number of cells in the maze that the robot can traverse per step
-         * @function MoveForward(): Move the robot forward in the maze
-         * @function TurnLeft(): Turns robot 90 degrees counter-clockwise direction
-         * @function TurnRight(): Turns robot 90 degrees clockwise direction
+         *  SpeedUp(int): Increase speed==number of cells in the maze that the robot can traverse per step
+         *  MoveForward(): Move the robot forward in the maze
+         *  TurnLeft(): Turns robot 90 degrees counter-clockwise direction
+         *  TurnRight(): Turns robot 90 degrees clockwise direction
          */
         void SpeedUp(int); 
 		virtual void MoveForward() override;
