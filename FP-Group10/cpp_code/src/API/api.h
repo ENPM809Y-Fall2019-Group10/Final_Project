@@ -6,7 +6,8 @@
 namespace fp
 {
     
-/** @brief Defines API class */
+/** \class API api.h "src/API/api.h"
+* @brief Defines API class */
 class API
 {
 	public:

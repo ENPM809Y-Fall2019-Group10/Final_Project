@@ -10,7 +10,7 @@
 namespace fp
 {
 /**
-    * @class    Algorithm bfsalgorithm.h "src/Algorithm/bfsalgorithm.h"
+    * @class    Algorithm dfsalgorithm.h "src/Algorithm/dfsalgorithm.h"
     * @brief    Algorithm class performs Depth First Search (DFS) operations on maze discovered in simulator.
     * @details  Algorithm class is designed to analyze the maze file discovered from the simulator and find a path
     *           from the start location to goal location. The DFS algorithm will evaluate the precense of a wall to
