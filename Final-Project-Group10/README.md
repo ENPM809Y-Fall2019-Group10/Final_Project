@@ -9,7 +9,7 @@ Please follow the below steps to run our code with MMS simulator.
 
 Add the respective fields with the data as shown below;  
 Directory:   
-`<path_to_downloaded_project_directory>/FP-Group10/cpp_code`
+`<path_to_downloaded_project_directory>/Final-Project-Group10/cpp_code`
 (Change directory path according to stored project location)   
 
 Build Command:   
@@ -20,6 +20,6 @@ Run Command:
 
 ## Documentation
 
-The doxyfile is present in `<path_to_downloaded_project_directory>/FP-Group10/doc/final_project_doxy`.
+The doxyfile is present in `<path_to_downloaded_project_directory>/Final-Project-Group10/doc/final_project_doxy`.
 
-The submission already includes the html files generated under `<path_to_downloaded_project_directory>/FP-Group10/doc/html/`, however, you can regenreate them by running `doxygen <path_to_downloaded_project_directory>/FP-Group10/doc/final_project_doxy`.
+The submission already includes the html files generated under `<path_to_downloaded_project_directory>/Final-Project-Group10/doc/html/`, however, you can regenreate them by running `doxygen <path_to_downloaded_project_directory>/Final-Project-Group10/doc/final_project_doxy`.
