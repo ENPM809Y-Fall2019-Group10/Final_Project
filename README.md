@@ -3,6 +3,7 @@
 Name: 
 Group 10 Final Project
 
+## Code
 Please follow the below steps to run our code with MMS simulator.  
 *Note*: We have not included the MMS simulator code/binary with our submission.
 
@@ -16,3 +17,9 @@ Build Command:
 
 Run Command:    
 `./a.out`
+
+## Documentation
+
+The doxyfile is present in `<path_to_downloaded_project_directory>/FP-Group10/doc/final_project_doxy`.
+
+The submission already includes the html files generated under `<path_to_downloaded_project_directory>/FP-Group10/doc/html/`, however, you can regenreate them by running `doxygen <path_to_downloaded_project_directory>/FP-Group10/doc/final_project_doxy`.
